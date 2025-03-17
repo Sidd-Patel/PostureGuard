@@ -116,3 +116,48 @@ Poor posture during daily activities can lead to chronic pain, reduced mobility,
    ```bash
    git clone https://github.com/Sidd-Patel/PostureGuard.git
    cd PostureGuard
+
+# 2. Install Dependencies:
+# Ensure you have the Arduino IDE installed.
+# Then, within the Arduino IDE, install the following libraries via the Library Manager:
+# - ESP8266WiFi
+# - ESP8266WebServer
+# - Adafruit MPU6050
+# - Adafruit Sensor
+
+# 3. Upload Firmware:
+# - Open the main .ino file in the Arduino IDE.
+# - Select your ESP8266 board (e.g., NodeMCU).
+# - Upload the code to your device.
+
+# 4. Hardware Setup:
+# - Connect the MPU6050 sensor to the ESP8266 as per the wiring diagram provided in the docs.
+# - Power up the system; the ESP8266 will automatically start in Access Point mode.
+
+## Usage
+
+# 1. Connect to Wi-Fi:
+# On your mobile device or computer, connect to the Wi-Fi network:
+#   SSID: "Hackdata"
+#   Password: "12345678"
+
+# 2. Access the Dashboard:
+# Open your web browser and navigate to:
+http://192.168.4.1
+# View real-time sensor data including Posture Angle, Pitch, and Roll.
+
+Contributing
+Contributions are welcome! If you have suggestions or improvements:
+
+Fork the repository and create a pull request.
+For major changes, please open an issue first to discuss your ideas.
+See CONTRIBUTING.md for detailed guidelines.
+License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+Acknowledgements
+Hackdata 2025: For inspiring innovative healthcare solutions.
+Adafruit: For providing exceptional sensor libraries.
+Our Community: For continuous support and feedback.
+Your journey to better posture and a healthier life begins with PostureGuard!
+
