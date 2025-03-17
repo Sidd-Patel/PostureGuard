@@ -168,20 +168,8 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 
 ---
 
-## 👥 Contributing
-
-Contributions are welcome! If you have suggestions or improvements:
-
-- Fork the repository and create a pull request.
-- For major changes, please open an issue first to discuss your ideas.
-- See `CONTRIBUTING.md` for detailed guidelines.
-
----
-
 ## 💬 Contact & Support
 
-- **Developer:** Sidd Patel
-- **Report Issues:** [GitHub Issues](https://github.com/Sidd-Patel/PostureGuard/issues)
-- **Website:** Coming Soon
+- **Developer:** Siddharth Patel
 
 Your journey to better posture and a healthier life begins with PostureGuard!
