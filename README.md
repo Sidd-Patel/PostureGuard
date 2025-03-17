@@ -171,5 +171,6 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 ## 💬 Contact & Support
 
 - **Developer:** Siddharth Patel
+- For any questions or inquiries, please contact Siddharth at sidd997701@gmail.com or sp839@snu.edu.in.
 
 Your journey to better posture and a healthier life begins with PostureGuard!
