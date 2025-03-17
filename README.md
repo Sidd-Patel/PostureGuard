@@ -117,13 +117,13 @@ Poor posture during daily activities can lead to chronic pain, reduced mobility,
    git clone https://github.com/Sidd-Patel/PostureGuard.git
    cd PostureGuard
 
-# 2. Install Dependencies:
-# Ensure you have the Arduino IDE installed.
-# Then, within the Arduino IDE, install the following libraries via the Library Manager:
-# - ESP8266WiFi
-# - ESP8266WebServer
-# - Adafruit MPU6050
-# - Adafruit Sensor
+2. Install Dependencies:
+ Ensure you have the Arduino IDE installed.
+ Then, within the Arduino IDE, install the following libraries via the Library Manager:
+ - ESP8266WiFi
+ - ESP8266WebServer
+ - Adafruit MPU6050
+ - Adafruit Sensor
 
 # 3. Upload Firmware:
 # - Open the main .ino file in the Arduino IDE.
