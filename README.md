@@ -1,129 +1,61 @@
-# PostureGuard
-
-# PostureGuard
-
-**PostureGuard** is an innovative smart posture monitoring system designed to help you maintain optimal posture, prevent musculoskeletal disorders, and promote a healthier lifestyle. By combining advanced wearable sensor technology with a dynamic web-based dashboard, PostureGuard offers real-time feedback to keep your posture in check.
+# PostureGuard  
+*An innovative smart posture tracking system that protects your health in real time*  
 
 ---
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Problem Statement](#problem-statement)
-- [Features](#features)
-- [System Architecture](#system-architecture)
-- [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
+📋 **Overview**  
+PostureGuard is a cutting-edge posture monitoring system that uses wearable sensor technology and a dynamic web dashboard to help you maintain proper posture—whether you're at your desk or on the move. It intelligently distinguishes between intentional movements and poor posture, providing immediate, actionable feedback to prevent musculoskeletal issues.
 
 ---
 
-## Overview
-
-PostureGuard is a comprehensive solution that seamlessly integrates hardware and software. It uses an ESP8266 microcontroller and an MPU6050 sensor to continuously monitor your posture. Sensor data is processed in real time to compute key metrics like Posture Angle (with custom Z-axis mapping), Pitch, and Roll. The processed data is then served over Wi-Fi via an auto-updating web dashboard.
-
----
-
-## Problem Statement
-
-Poor posture during daily activities can lead to chronic pain, reduced mobility, and other musculoskeletal issues. **PostureGuard** aims to address this problem by providing:
-
-- **Real-Time Monitoring:** Continuous tracking of your posture.
-- **Actionable Feedback:** Immediate, easy-to-understand insights to help correct posture.
-- **Preventive Healthcare:** Encouraging healthier postural habits to reduce long-term risks.
-
----
-
-## Features
-
-- **Smart Sensor Integration:**  
-  - Utilizes an MPU6050 sensor for accurate motion tracking (accelerometer, gyroscope, and temperature data).
-  
-- **Real-Time Data Processing:**  
-  - Computes:
-    - **Posture Angle:** Remaps Z-axis data so that -9.8 m/s² is interpreted as +90° and 9.8 m/s² as -90°.
-    - **Pitch & Roll:** Standard trigonometric calculations provide a full picture of your posture.
-
-- **Dynamic Web Dashboard:**  
-  - Hosted on the ESP8266, the dashboard updates automatically (every 500ms) with live sensor data.
-  
-- **Modular & Expandable Design:**  
-  - Ready for future enhancements like mobile notifications or AI-based posture analysis.
+✨ **Key Features**  
+- **Dual-Mode Operation:**  
+  - **Normal Mode:** Strict monitoring for sedentary activities.  
+  - **Activity Mode:** Flexible monitoring during physical activities to avoid false alerts.
+- **Intelligent Detection:**  
+  - Differentiates between intentional movements and poor posture.  
+  - Tracks the duration of poor posture for timely corrective feedback.
+- **Personalized Calibration:**  
+  - Quickly calibrate to your ideal posture baseline.  
+  - Customizable sensitivity thresholds for a tailored experience.
+- **Real-Time Data Visualization:**  
+  - Live tracking of posture angle, pitch, roll, accelerometer, and gyroscope data.  
+  - Interactive dashboard with historical trend analysis.
 
 ---
 
-## System Architecture
-
-      +-----------------------+
-      |   MPU6050 Sensor      |
-      | (Accelerometer,       |
-      |  Gyroscope, Temp)     |
-      +-----------+-----------+
-                  |
-                  | I2C Communication
-                  |
-      +-----------v-----------+
-      | ESP8266 Microcontroller|
-      | (Data Acquisition,      |
-      |  Processing, Wi-Fi)     |
-      +-----------+-----------+
-                  |
-                  | HTTP/AJAX Communication
-                  |
-      +-----------v-----------+
-      |   Wi-Fi Network       |
-      | (ESP8266 Access Point)|
-      +-----------+-----------+
-                  |
-                  | Real-Time Data
-                  |
-      +-----------v-----------+
-      | Mobile/Web Client     |
-      | (Dashboard Interface) |
-      +-----------------------+
-
+🖥️ **Technical Details**  
+- **Built With:**  
+  - **Firmware:** Arduino (C++) running on an ESP8266  
+  - **Web Dashboard:** HTML, CSS, and JavaScript (AJAX for real-time updates)  
+  - **Sensor Integration:** MPU6050 (accelerometer, gyroscope, and temperature sensor)
+- **Key Algorithms:**  
+  - Calculation of Posture Angle using Z-axis remapping (i.e., -9.8 m/s² → +90°, 9.8 m/s² → -90°)  
+  - Computation of Pitch & Roll using trigonometric formulas  
+  - Smart filtering to differentiate between poor posture and exercise
 
 ---
 
-## Tech Stack
+🚀 **Getting Started**
 
-- **Hardware:**  
-  - **ESP8266 Microcontroller:** Provides Wi-Fi connectivity and sufficient processing power.
-  - **MPU6050 Sensor:** 3-axis accelerometer, gyroscope, and temperature sensor.
+### Prerequisites  
+- [Arduino IDE](https://www.arduino.cc/en/software) (v1.8.x or later)  
+- Compatible sensor hardware (ESP8266, MPU6050)  
+- Modern web browser
 
-- **Firmware / Embedded Software:**  
-  - **Arduino (C++):** Developed using the Arduino IDE.
-  - **Libraries:**  
-    - ESP8266WiFi, ESP8266WebServer  
-    - Adafruit MPU6050, Adafruit Sensor  
-    - math.h for trigonometric calculations
+### Installation
 
-- **Web Dashboard:**  
-  - **Frontend:** HTML, CSS, JavaScript
-  - **AJAX:** For real-time, auto-updating sensor data
+```bash
+# 1. Clone the repository:
+git clone https://github.com/Sidd-Patel/PostureGuard.git
+cd PostureGuard
 
-- **Version Control:**  
-  - **Git & GitHub:** Repository hosted at [PostureGuard](https://github.com/Sidd-Patel/PostureGuard)
-
----
-
-## Installation
-
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/Sidd-Patel/PostureGuard.git
-   cd PostureGuard
-
-2. Install Dependencies:
- Ensure you have the Arduino IDE installed.
- Then, within the Arduino IDE, install the following libraries via the Library Manager:
- - ESP8266WiFi
- - ESP8266WebServer
- - Adafruit MPU6050
- - Adafruit Sensor
+# 2. Install Dependencies:
+# - Open the Arduino IDE and install the following libraries via the Library Manager:
+#   - ESP8266WiFi
+#   - ESP8266WebServer
+#   - Adafruit MPU6050
+#   - Adafruit Sensor
 
 # 3. Upload Firmware:
 # - Open the main .ino file in the Arduino IDE.
@@ -134,30 +66,44 @@ Poor posture during daily activities can lead to chronic pain, reduced mobility,
 # - Connect the MPU6050 sensor to the ESP8266 as per the wiring diagram provided in the docs.
 # - Power up the system; the ESP8266 will automatically start in Access Point mode.
 
-## Usage
 
-# 1. Connect to Wi-Fi:
-# On your mobile device or computer, connect to the Wi-Fi network:
-#   SSID: "Hackdata"
-#   Password: "12345678"
+📊 Dashboard Overview
 
-# 2. Access the Dashboard:
-# Open your web browser and navigate to:
-http://192.168.4.1
-# View real-time sensor data including Posture Angle, Pitch, and Roll.
+Real-Time Data Visualization:
+Live display of posture angle, pitch, roll, accelerometer, and gyroscope readings.
+Interactive Interface:
+Auto-refreshing dashboard (updates every 500ms) accessible from any Wi-Fi enabled device.
+🔧 Usage Tips
 
-Contributing
-Contributions are welcome! If you have suggestions or improvements:
+Calibration:
+For optimal results, calibrate the system while maintaining your ideal posture.
+Follow on-screen instructions for a smooth calibration process.
+Mode Switching:
+Use Normal Mode for desk work.
+Switch to Activity Mode during physical exercises to adjust sensitivity.
+📱 Mobile Integration
 
-Fork the repository and create a pull request.
-For major changes, please open an issue first to discuss your ideas.
-See CONTRIBUTING.md for detailed guidelines.
-License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+Enjoy a responsive design that works seamlessly on desktops, tablets, and smartphones.
+Connect to the ESP8266 Access Point and monitor your posture in real time via your browser.
+🔍 How It Works
 
-Acknowledgements
-Hackdata 2025: For inspiring innovative healthcare solutions.
-Adafruit: For providing exceptional sensor libraries.
-Our Community: For continuous support and feedback.
+Sensor Data Collection: Continuously gathers data from the MPU6050 sensor.
+Data Processing: Computes posture angle, pitch, and roll using advanced algorithms.
+Smart Filtering: Differentiates between poor posture and intentional movement.
+Real-Time Feedback: Updates the dashboard using AJAX for a seamless user experience.
+🔄 Future Enhancements
+
+Integration of machine learning for enhanced activity recognition.
+Detailed long-term posture analytics.
+Integration with fitness and health tracking platforms.
+Customizable alert sounds and vibration patterns.
+Cloud synchronization for multi-device usage.
+📝 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+👥 Contact & Support
+
+Developer: Sidd Patel
+Report Issues: GitHub Issues
+Website: Coming Soon
 Your journey to better posture and a healthier life begins with PostureGuard!
-
