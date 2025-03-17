@@ -25,7 +25,7 @@ PostureGuard is an intelligent, real-time posture monitoring system that helps y
 ---
 
 🖥️ **System Architecture**  
-![System Architecture Diagram](images/system_architecture.png)  
+![System Architecture Diagram](System Architecture Diagram.png)  
 *Figure: System Architecture of PostureGuard*  
 
             +-----------------------+
